@@ -3,18 +3,16 @@
 
 import os
 
-
 from flask import g
 
-
 # konfiguracja aplikacji
-from uczniowie.modele import baza_plik, baza
-from uczniowie.views import *
+from views import *
 
 app.config.update(dict(
     SECRET_KEY='bardzosekretnawartosc',
     DATABASE=os.path.join(app.root_path, baza_plik),
 ))
+
 
 @app.before_request
 def before_request():
@@ -25,8 +23,8 @@ def before_request():
 @app.after_request
 def after_request(response):
     g.db.close()
-    
     return response
+
 
 if __name__ == '__main__':
     app.run(debug=True)
