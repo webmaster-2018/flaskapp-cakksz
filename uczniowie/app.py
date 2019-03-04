@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# quiz-orm/app.py
+# app.py
 
 import os
 
@@ -27,4 +27,4 @@ def after_request(response):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+app.run(debug=True)
